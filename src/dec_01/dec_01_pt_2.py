@@ -6,10 +6,8 @@ def main(filename: str):
     with open(filename, "r") as f:
         lines = f.readlines()
     larger_than_prior = 0
-    for c, _ in enumerate(lines[1:-2]):
-        sum_current = sum([int(e) for e in lines[c+1:c+4]])
-        sum_prior = sum([int(e) for e in lines[c:c+3]])
-        if sum_current > sum_prior:
+    for c, _ in enumerate(lines[0:-3]):
+        if int(lines[c+3]) > int(lines[c]):
             larger_than_prior += 1
     return larger_than_prior
 
