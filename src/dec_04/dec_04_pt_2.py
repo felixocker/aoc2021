@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""aoc21 day 3 pt 2"""
+"""aoc21 day 4 pt 2"""
 
 import numpy as np
 from io import StringIO
