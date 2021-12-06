@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""aoc21 day 6 pt 1"""
+"""aoc21 day 6 pt 2"""
 
 import copy
 
