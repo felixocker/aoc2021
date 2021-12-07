@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """aoc21 day 7 pt 2"""
 
+import statistics
 import aocd
 
 
@@ -10,11 +11,8 @@ def gauss_sum(n: int) -> int:
 
 def main(positions: str):
     positions = [int(i) for i in positions.split(",")]
-    fuel_costs: dict = {}
-    for pos in range(min(positions), max(positions)+1):
-        fuel_costs[pos] = sum(gauss_sum(abs(p-pos)) for p in positions)
-    best_pos = min(fuel_costs, key=fuel_costs.get)
-    return fuel_costs[best_pos]
+    best_pos = round(statistics.mean(positions))
+    return sum(gauss_sum(abs(p-best_pos)) for p in positions)
 
 
 if __name__ == "__main__":
